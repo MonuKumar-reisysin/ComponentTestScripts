@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.ComponentTestScripts.PageObject.LoginPage;
-import com.ComponentTestScripts.testBase.Config;
 import com.applitools.eyes.Eyes;
 import com.applitools.eyes.MatchLevel;
 import com.applitools.eyes.RectangleSize;
+import com.framework.PageObject.LoginPage;
+import com.framework.testBase.Config;
 
 public class VisualTest {
 	static LoginPage loginPage;

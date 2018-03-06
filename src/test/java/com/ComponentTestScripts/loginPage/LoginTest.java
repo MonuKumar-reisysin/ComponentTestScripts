@@ -4,10 +4,10 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.ComponentTestScripts.PageObject.LoginPage;
-import com.ComponentTestScripts.helper.Logger.LoggerHelper;
-import com.ComponentTestScripts.testBase.Config;
-import com.ComponentTestScripts.testBase.TestBase;
+import com.framework.Logger.LoggerHelper;
+import com.framework.PageObject.LoginPage;
+import com.framework.testBase.Config;
+import com.framework.testBase.TestBase;
 
 
 public class LoginTest extends TestBase {

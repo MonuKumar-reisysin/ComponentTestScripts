@@ -10,19 +10,17 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.ComponentTestScripts.PageObject.LoginPage;
-import com.ComponentTestScripts.PageObject.PageTabs;
-import com.ComponentTestScripts.excelReader.Excel_Reader;
-import com.ComponentTestScripts.helper.Browser.BrowserHelper;
-import com.ComponentTestScripts.helper.DropDown.DropDownHelper;
-import com.ComponentTestScripts.helper.Javascript.JavaScriptHelper;
-import com.ComponentTestScripts.helper.Logger.LoggerHelper;
-import com.ComponentTestScripts.helper.Wait.WaitHelper;
-import com.ComponentTestScripts.test.TestGetTabList;
-import com.ComponentTestScripts.testBase.Config;
-import com.ComponentTestScripts.testBase.TestBase;
-import com.ComponentTestScripts.vo.TabNameVO;
+import com.framework.Logger.LoggerHelper;
+import com.framework.PageObject.LoginPage;
+import com.framework.PageObject.PageTabs;
 
+import com.framework.excelReader.Excel_Reader;
+import com.framework.testBase.Config;
+import com.framework.testBase.TestBase;
+import com.framework.utility.DropDownHelper;
+import com.framework.utility.JavaScriptHelper;
+import com.framework.utility.RedirectionHelper;
+import com.framework.utility.WaitHelper;
 
 
 
@@ -35,7 +33,7 @@ public class PageTabScripts extends TestBase{
 	String emailAddress;
 	String password;
 	PageTabs pagetab;
-	BrowserHelper browserhelper;
+	RedirectionHelper browserhelper;
 	DropDownHelper dropdownhelper;
 	Excel_Reader excelReader;
 	boolean methodPassed = false;
@@ -93,7 +91,7 @@ public class PageTabScripts extends TestBase{
 		System.out.println(strActualTabList);
 		
 */		
-		browserhelper = new BrowserHelper(driver);
+		browserhelper = new RedirectionHelper(driver);
 		browserhelper.getWindowHandlens();
 		pagetab.icon_ModifyPageLayout();
 		browserhelper.SwitchToWindow(1);
@@ -189,7 +187,7 @@ public class PageTabScripts extends TestBase{
 		pagetab.draftLink();
 		pagetab.icon_ViewUnderDraftAnnouncement();
 		
-		browserhelper = new BrowserHelper(driver);
+		browserhelper = new RedirectionHelper(driver);
 		browserhelper.getWindowHandlens();
 		pagetab.icon_ModifyPageLayout();
 		browserhelper.SwitchToWindow(1);

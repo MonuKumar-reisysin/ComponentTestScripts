@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<service>
+   <repository>
+		
+			<sql alias="create.app" operation="select">
+			SELECT GNT__Abbreviation__c,GNT__Active__c,GNT__AvailableForProfiles__c,GNT__DefaultThemeName__c,GNT__InternalUniqueID__c,GNT__Label__c,GNT__LogoDocumentName__c,GNT__RecordTypeJSON__c,GNT__ReportsFolderName__c,GNT__SelectedLogoDocumentName__c,GNT__Sequence__c,GNT__URL__c,Id,IsDeleted,LastModifiedById,LastModifiedDate,LastReferencedDate,LastViewedDate,Name,OwnerId,SystemModstamp FROM GNT__CustomApp__c
+		    </sql>
+		
+	</repository>
+</service>
+
+
+
