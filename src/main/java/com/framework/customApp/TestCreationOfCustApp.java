@@ -8,12 +8,11 @@ import com.framework.vo.CustomAppVO;
 
 public class TestCreationOfCustApp {
 	@SuppressWarnings({ "unchecked" })
-	public static void main (String phaseName){
+	public static List<CustomAppVO> main (){
 		ForceDelegate gate = com.framework.utils.GGUtils.getForceDelegate();
 		
-		List<CustomAppVO> customapp = null;
-		customapp = gate.queryAllMultiple("create.app", new Object[]{phaseName});
-		
+		List<CustomAppVO> customapp = gate.queryMultiple("select.custom.app");
+		return customapp;
 		/*ArrayList<String> arraylistExpectedApp =  new ArrayList<String>();
 		for(CustomAppVO f:customapp){
 			arraylistExpectedApp.add(f.getName());			
@@ -23,5 +22,9 @@ public class TestCreationOfCustApp {
 		return strarraylistExpectedApp;*/
 		
 		}
+	
+	public static void main(String[] args) {
+		main();
+	}
 
 }

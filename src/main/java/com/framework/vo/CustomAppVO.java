@@ -17,6 +17,7 @@ public class CustomAppVO extends CustomVO {
 	private Integer	GNT__Sequence__c;
 	private String GNT__URL__c;
     private String Name;
+    private String GNT__RecordTypeJSON__c;
     
     
 	public String getGNT__Abbreviation__c() {
@@ -115,6 +116,14 @@ public class CustomAppVO extends CustomVO {
 
 	public void setGNT__Active__c(boolean gNT__Active__c) {
 		GNT__Active__c = gNT__Active__c;
+	}
+
+	public String getGNT__RecordTypeJSON__c() {
+		return GNT__RecordTypeJSON__c;
+	}
+
+	public void setGNT__RecordTypeJSON__c(String gNT__RecordTypeJSON__c) {
+		GNT__RecordTypeJSON__c = gNT__RecordTypeJSON__c;
 	}
 
 }

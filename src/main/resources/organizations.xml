@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<service>
+   <organizations>
+       <organization orgName="gg" propertyFilename="gg.properties"/>
+   </organizations>  
+</service>   
+   

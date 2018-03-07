@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<service>
+   <repository>
+<!-- 	<sql alias="select.flex.table" operation="select"> -->
+<!-- 	   Select Name, GNT__Header__c from GNT__DataTableConfig__c limit 10 -->
+<!-- 	</sql> -->
+		
+			<sql alias="select.user.id" operation="select">
+			SELECT id FROM User WHERE Username =?
+		</sql>
+		
+		<sql alias="select.userpref.list" operation="select">
+ 			 SELECT GNT__ActiveAppName__c FROM GNT__UserPreferences__c WHERE SetupOwnerId =? 
+ 			 </sql>
+		
+		<sql alias="select.phaselist.list" operation="select">
+ 			SELECT GNT__TabName__c,id FROM GNT__PhaseConfig__c WHERE GNT__CustomAppName__c =? AND GNT__Active__c = true ORDER BY GNT__Sequence__c ASC NULLS FIRST
+ 			 </sql>		
+			
+		<sql alias="select.accordioncontent.list" operation="select">
+ 			SELECT Name,Id FROM GNT__AccordionContent__c WHERE GNT__Active__c = true and GNT__AccordionSubHeader__r.GNT__Active__c = true and GNT__AccordionSubHeader__r.GNT__AccordionHeader__r.GNT__Active__c = true and GNT__AccordionSubHeader__r.GNT__AccordionHeader__r.GNT__PhaseConfig__r.Name = ? ORDER BY GNT__AccordionSubHeader__r.GNT__AccordionHeader__r.GNT__Sequence__c ASC, GNT__AccordionSubHeader__r.GNT__Sequence__c ASC,GNT__Sequence__c ASC
+ 			 </sql>
+ 			  
+ 		<sql alias="select.flextable.list" operation="select">
+ 			 SELECT Name,GNT__Link__c FROM GNT__AccordionContent__c WHERE GNT__Active__c = true and GNT__AccordionSubHeader__r.GNT__AccordionHeader__r.GNT__Active__c = true and GNT__AccordionSubHeader__r.GNT__AccordionHeader__r.GNT__PhaseConfig__r.Name = ? ORDER BY GNT__AccordionSubHeader__r.GNT__AccordionHeader__r.GNT__Sequence__c ASC, GNT__AccordionSubHeader__r.GNT__Sequence__c ASC,GNT__Sequence__c ASC
+ 			 </sql>
+ 			 
+ 		<sql alias="select.sidebarserchflextablecount.list" operation="select">
+ 			 SELECT Id FROM GNT__SearchConfig__c WHERE GNT__PhaseConfig__r.Name = ? 
+ 			 </sql>
+ 			 
+ 		<sql alias="select.footerlinks.list" operation="select">
+ 			 SELECT GNT__DisplayText__c FROM GNT__CustomAppFooterConfig__c WHERE GNT__Active__c = true
+ 			 </sql>	 
+ 			 	 
+ 		<sql alias="select.charts.list" operation="select">
+ 			SELECT Name FROM GNT__ChartConfig__c WHERE GNT__Active__c = true AND GNT__PhaseConfig__r.Name = ?
+ 			 </sql>
+ 		
+ 		<sql alias="select.charts.title" operation="select">
+ 			SELECT GNT__Title__c FROM GNT__ChartConfig__c WHERE GNT__Active__c = true AND GNT__PhaseConfig__c = ?
+			 </sql>	 
+ 			 	 	
+ 	 	<sql alias="select.custom.app" operation="select">
+ 	 	SELECT GNT__Abbreviation__c,GNT__Active__c,GNT__AvailableForProfiles__c,GNT__DefaultThemeName__c,GNT__InternalUniqueID__c,GNT__Label__c,GNT__LogoDocumentName__c,GNT__RecordTypeJSON__c,GNT__ReportsFolderName__c,GNT__SelectedLogoDocumentName__c,GNT__Sequence__c,GNT__URL__c,Id,Name FROM GNT__CustomApp__c
+ 	 	</sql>
+	</repository>
+</service>
+
+
+

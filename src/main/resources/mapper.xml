@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<service>
+
+	
+	
+	<mapper>
+		<map sfObject="GNT__CustomApp__c" class="com.framework.vo.CustomAppVO" />
+	</mapper>
+
+	<!-- <mapper>
+		<map sfObject="GNT__UserPreferences__c" class="com.id.vo.UserPreferenceVO" />
+	</mapper>
+
+	<mapper>
+		<map sfObject="GNT__PhaseConfig__c" class="com.id.vo.PhaseVO" />
+	</mapper>
+		
+	<mapper>
+		<map sfObject="GNT__AccordionContent__c" class="com.id.vo.SidebarVO" />
+	</mapper>
+		
+	<mapper>
+		<map sfObject="GNT__AccordionSubHeader__c" class="com.id.vo.Sidebar1VO" />
+	</mapper>	
+	
+	<mapper>
+		<map sfObject="GNT__SearchConfig__c" class="com.id.vo.SidebarSerachFlexTableVO" />
+	</mapper>	
+	
+	<mapper>
+		<map sfObject="GNT__CustomAppFooterConfig__c" class="com.id.vo.FooterLinksVO" />
+	</mapper>
+	
+	<mapper>
+		<map sfObject="GNT__ChartConfig__c" class="com.id.vo.ChartsVO" />
+	</mapper> -->
+		
+</service>   
