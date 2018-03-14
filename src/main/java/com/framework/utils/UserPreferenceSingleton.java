@@ -19,7 +19,7 @@ public class UserPreferenceSingleton {
 
 	private ForceDelegate UserPreferenceSingleton()
 	    {
-	    	cachedObjects = new HashMap<>();
+	    	cachedObjects = new HashMap<String, String>();
 	    	ForceDelegate gate = com.framework.utils.GGUtils.getForceDelegate();
 	    	System.out.println(gate.getSessionId());
 	    	

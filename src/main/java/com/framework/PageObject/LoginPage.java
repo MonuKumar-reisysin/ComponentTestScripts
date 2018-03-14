@@ -37,8 +37,8 @@ public class LoginPage {
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		waitHelper = new WaitHelper(driver);
-		waitHelper.waitForElement(driver, buttonLogin,new Config(TestBase.OR).getExplicitWait());
+		/*waitHelper = new WaitHelper(driver);
+		waitHelper.waitForElement(driver, buttonLogin,new Config(TestBase.OR).getExplicitWait());*/
 	}
 	
 	public void clickOnSignInButton(){

@@ -1,4 +1,4 @@
-package com.ComponentTestScripts.PageLayout;
+package com.framework.main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

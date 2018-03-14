@@ -1,4 +1,4 @@
-package com.ComponentTestScripts.loginPage;
+package com.framework.loginPage;
 
 import org.apache.log4j.Logger;
 import org.testng.Assert;

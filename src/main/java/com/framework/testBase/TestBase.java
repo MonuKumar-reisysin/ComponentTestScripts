@@ -48,8 +48,7 @@ public class TestBase {
 	public static Properties OR;
 	public File f1;
 	public FileInputStream file;
-	
-    public static ExtentReports extent;
+	public static ExtentReports extent;
 	public static ExtentTest test;
 	public Excel_Reader excelreader;
 	public ITestResult result;
@@ -57,7 +56,7 @@ public class TestBase {
 	static {
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
-		extent = new ExtentReports(System.getProperty("user.dir") + "/src/main/java/com/ComponentTestScripts/report/test" + formater.format(calendar.getTime()) + ".html", false);
+		extent = new ExtentReports(System.getProperty("user.dir") + "/src/main/java/com/framework/report/test" + formater.format(calendar.getTime()) + ".html", false);
 	}
 	
 	@BeforeTest
@@ -123,17 +122,17 @@ public class TestBase {
 		String log4jConfPath = "log4j.properties";
 		PropertyConfigurator.configure(log4jConfPath);
 		OR = new Properties();
-		f1 = new File(System.getProperty("user.dir")+"/src/main/java/com/ComponentTestScripts/config/config.properties");
+		f1 = new File(System.getProperty("user.dir")+"/src/main/java/com/framework/config/config.properties");
 		file = new FileInputStream(f1);
 		OR.load(file);
 		logger.info("loading config.properties");
 		
-		f1 = new File(System.getProperty("user.dir")+"/src/main/java/com/ComponentTestScripts/config/or.properties");
+		f1 = new File(System.getProperty("user.dir")+"/src/main/java/com/framework/config/or.properties");
 		file = new FileInputStream(f1);
 		OR.load(file);
 		logger.info("loading or.properties");
 		
-		f1 = new File(System.getProperty("user.dir")+"/src/main/java/com/ComponentTestScripts/Properties/homepage.properties");
+		f1 = new File(System.getProperty("user.dir")+"/src/main/java/com/framework/Properties/homepage.properties");
 		file = new FileInputStream(f1);
 		OR.load(file);
 		logger.info("loading homepage.properties");
@@ -145,7 +144,7 @@ public class TestBase {
 			imageName = "blank";
 		}
 		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String imagelocation = System.getProperty("user.dir")+"/src/main/java/com/ComponentTestScripts/screenshot";
+		String imagelocation = System.getProperty("user.dir")+"/src/main/java/com/framework/screenshot";
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
 		String actualImageName = imagelocation+imageName+"_"+formater.format(calendar.getTime())+".png";
@@ -188,7 +187,7 @@ public class TestBase {
 	@AfterMethod()
 	public void afterMethod(ITestResult result) throws IOException {
 		getresult(result);
-	}
+		}
 
 	@BeforeMethod()
 	public void beforeMethod(Method result) {
@@ -285,7 +284,7 @@ public class TestBase {
 	    System.out.println("startDateTime---"+startDateTime);
 		String userDirector = System.getProperty("user.dir");
 
-		String resultFile = userDirector + "/src/main/java/com/ComponentTestScripts/screenshot/TestReport.html";
+		String resultFile = userDirector + "/src/main/java/com/framework/screenshot/TestReport.html";
 		
 		File file = new File(resultFile);
 		System.out.println(file.exists());

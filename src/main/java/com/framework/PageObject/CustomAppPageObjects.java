@@ -16,20 +16,23 @@ import com.framework.utility.WaitHelper;
 
 public class CustomAppPageObjects {
 	private final Logger log = LoggerHelper.getLogger(PageTabs.class);
-	
+	WebDriver driver;
 	private static List<WebElement> list_element = null;
 	WaitHelper waitHelper;
-	WebDriver driver;
+	
 	
 	
 	@FindBy(xpath=".//*[@id='tabContainer']//*[@title='GovGrants Launcher Tab']")
 	WebElement govGrantsLauncherButton;
 	
+	@FindBy(id="appBtnId")
+	WebElement customappbuton;
+	
 	public CustomAppPageObjects(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		waitHelper = new WaitHelper(driver);
-		waitHelper.waitForElement(driver, govGrantsLauncherButton,new Config(TestBase.OR).getExplicitWait());
+		/*waitHelper = new WaitHelper(driver);
+		waitHelper.waitForElement(driver, govGrantsLauncherButton,new Config(TestBase.OR).getExplicitWait());*/
 	}
 	
 	public void govGrantsLauncher(){
@@ -37,8 +40,18 @@ public class CustomAppPageObjects {
 		this.govGrantsLauncherButton.click();
 	}
 	
+	public void button_CustomApp(){
+		log.info("clicking on customApp button");
+		this.customappbuton.click();
+	}
+	
 	public static List<WebElement> allcreatedCUstomApp(WebDriver driver){
-		list_element = driver.findElements(By.id("appBtnId"));
+		list_element = driver.findElement(By.id("appDropDownMenuId")).findElements(By.tagName("a"));
+		return list_element;
+	}
+	
+	public static List<WebElement> allcreatedCUstomApplogo(WebDriver driver){
+		list_element = driver.findElement(By.id("appDropDownMenuId")).findElements(By.tagName("img"));
 		return list_element;
 	}
 

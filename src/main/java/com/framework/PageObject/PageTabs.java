@@ -41,7 +41,10 @@ public class PageTabs {
 	@FindBy(linkText = "Enable GovGrants Setup")
 	public WebElement selectStickyBottomDrpdown;
 	
-	@FindBy(xpath=".//*[@id='tabContainer']//*[@title='GovGrants Launcher Tab']")
+	/*@FindBy(xpath=".//*[@id='tabContainer']//*[@title='GovGrants Launcher Tab']")
+	WebElement govGrantsLauncherButton;*/
+	
+	@FindBy(xpath="//div[@id='tabContainer']//*[@title='GovGrantsLauncher Tab']")
 	WebElement govGrantsLauncherButton;
 	
 	@FindBy(id="appBtnId")
@@ -101,12 +104,12 @@ public class PageTabs {
 	public PageTabs(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		waitHelper = new WaitHelper(driver);
-		waitHelper.waitForElement(driver, govGrantsLauncherButton,new Config(TestBase.OR).getExplicitWait());
+		/*waitHelper = new WaitHelper(driver);
+		waitHelper.waitForElement(driver, govGrantsLauncherButton,new Config(TestBase.OR).getExplicitWait());*/
 	}
 	
 	public void govGrantsLauncher(){
-		log.info("clicking sticky button..");
+		log.info("clicking on govgrant launcher button..");
 		this.govGrantsLauncherButton.click();
 	}
 	

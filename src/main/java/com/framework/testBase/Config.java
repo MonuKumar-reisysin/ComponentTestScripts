@@ -10,6 +10,7 @@ private Properties OR;
 		this.OR = OR;
 	}
 	public String getUserName() {
+		System.out.println("UsrName:"+OR.getProperty("Username"));
 		return OR.getProperty("Username");
 	}
 

@@ -1,4 +1,4 @@
-package com.ComponentTestScripts.PageLayout;
+package com.framework.main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +44,7 @@ public class PageTabScripts extends TestBase{
 		log.info(PageTabScripts.class.getName()+" started");
 		
 		Config config = new Config(OR);
+		System.out.println(config);
 		driver.get(config.getWebsite());
 		
 		loginPage = new LoginPage(driver);

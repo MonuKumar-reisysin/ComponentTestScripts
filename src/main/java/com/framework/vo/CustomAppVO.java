@@ -110,7 +110,7 @@ public class CustomAppVO extends CustomVO {
 		Name = name;
 	}
 
-	public boolean isGNT__Active__c() {
+	public boolean getGNT__Active__c() {
 		return GNT__Active__c;
 	}
 

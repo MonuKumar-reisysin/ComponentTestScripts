@@ -42,8 +42,27 @@
 			 </sql>	 
  			 	 	
  	 	<sql alias="select.custom.app" operation="select">
- 	 	SELECT GNT__Abbreviation__c,GNT__Active__c,GNT__AvailableForProfiles__c,GNT__DefaultThemeName__c,GNT__InternalUniqueID__c,GNT__Label__c,GNT__LogoDocumentName__c,GNT__RecordTypeJSON__c,GNT__ReportsFolderName__c,GNT__SelectedLogoDocumentName__c,GNT__Sequence__c,GNT__URL__c,Id,Name FROM GNT__CustomApp__c
- 	 	</sql>
+ 	 	    SELECT GNT__Abbreviation__c,GNT__Active__c,GNT__AvailableForProfiles__c,GNT__DefaultThemeName__c,GNT__InternalUniqueID__c,GNT__Label__c,GNT__LogoDocumentName__c,GNT__RecordTypeJSON__c,GNT__ReportsFolderName__c,GNT__SelectedLogoDocumentName__c,GNT__Sequence__c,GNT__URL__c,Id,Name FROM GNT__CustomApp__c order  by GNT__Sequence__c asc
+ 	 	    </sql>
+ 	 	    
+ 	 	<sql alias="create.custom.app" table="GNT__CustomApp__c">
+		<field name="GNT__Abbreviation__c"/>
+		<field name="GNT__Active__c"/>
+		<field name="GNT__AvailableForProfiles__c"/>
+		<field name="GNT__DefaultThemeName__c"/>
+		<field name="GNT__InternalUniqueID__c"/>
+		<field name="GNT__Label__c"/>
+		<field name="GNT__LogoDocumentName__c"/>
+		<field name="GNT__ReportsFolderName__c"/>
+		<field name="GNT__SelectedLogoDocumentName__c"/>
+		<field name="GNT__Sequence__c"/>
+		<field name="GNT__URL__c"/>
+		<field name="Name"/>
+		<field name="GNT__RecordTypeJSON__c"/>
+		
+	</sql>	    
+ 	 	
+ 	 	
 	</repository>
 </service>
 
