@@ -7,17 +7,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.framework.Logger.LoggerHelper;
-import com.framework.PageObject.LoginPage;
+import com.framework.PageObject.LoginPageObjects;
 import com.framework.testBase.Config;
 import com.framework.testBase.TestBase;
-import com.framework.utility.VerificationHelper;
 import com.framework.utility.WaitHelper;
 
 
-public class LoginPage {
+public class LoginPageObjects {
 	
 	WebDriver driver;
-	private final Logger log = LoggerHelper.getLogger(LoginPage.class);
+	private final Logger log = LoggerHelper.getLogger(LoginPageObjects.class);
 	WaitHelper waitHelper;
 	
 	
@@ -30,11 +29,13 @@ public class LoginPage {
 	@FindBy(xpath=".//*[@id='Login']")
 	WebElement buttonLogin;
 	
-	@FindBy(xpath=".//*[@id='tabContainer']//*[@title='GovGrants Launcher Tab']")
-	WebElement successLogin;
-		
-
-	public LoginPage(WebDriver driver) {
+	@FindBy(xpath=".//*[@id='tryLexDialogX']")
+	WebElement popUpWindow;
+	
+	@FindBy(xpath="//div[@id='tabContainer']//*[@title='GovGrantsLauncher Tab']")
+	WebElement govGrantsLauncherButton;
+	
+	public LoginPageObjects(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		/*waitHelper = new WaitHelper(driver);
@@ -56,16 +57,18 @@ public class LoginPage {
 		this.password.sendKeys(password);
 	}
 	
-	/*public boolean verifySuccessLoginMsg(){
-		return new GenricHelper().isDisplayed(successLogin);
-	}*/
 	
-	public boolean verifyLoginSuccess(){
-		new VerificationHelper();
-		return VerificationHelper.verifyElementPresent(successLogin);
+	public void popUpClosing(){
+		log.info("closing advertisement popup...");
+		popUpWindow.click();
 	}
 	
+	public void govGrantsLauncher(){
+		log.info("clicking on govgrant launcher button..");
+		this.govGrantsLauncherButton.click();
+	}
 	
+		
 	public void loginToApplication(String emailAddress, String password){
 		
 		enterUserName(emailAddress);
